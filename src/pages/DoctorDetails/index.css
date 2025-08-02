@@ -1,0 +1,172 @@
+:root {
+  --primary: #3a86ff;
+  --primary-light: #ebf3ff;
+  --secondary: #6c757d;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --border: #e9ecef;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Base Container */
+.doctor-details-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 3rem;
+}
+
+/* Profile Section */
+.doctor-profile-section {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+.doctor-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  margin-bottom: 1.5rem;
+}
+
+.doctor-meta {
+  text-align: center;
+}
+
+.doctor-name {
+  font-size: 1.8rem;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+.doctor-specialty {
+  color: var(--primary);
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.doctor-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.star {
+  color: #e0e0e0;
+  font-size: 1.2rem;
+}
+
+.star.filled {
+  color: #ffc107;
+}
+
+/* Content Sections */
+.doctor-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  color: var(--dark);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--primary);
+}
+
+.doctor-bio {
+  color: var(--secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .doctor-details-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .doctor-profile-section {
+    position: static;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .doctor-image {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0;
+  }
+
+  .doctor-meta {
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-details-container {
+    padding: 0 1rem;
+  }
+
+  .doctor-profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .doctor-image {
+    width: 200px;
+    height: 200px;
+  }
+
+  .doctor-meta {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .doctor-name {
+    font-size: 1.5rem;
+  }
+
+  .doctor-specialty {
+    font-size: 1rem;
+  }
+
+  .doctor-content {
+    gap: 2rem;
+  }
+}
+
+.not-found {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--secondary);
+}
